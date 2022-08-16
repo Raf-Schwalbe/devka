@@ -21,9 +21,9 @@ Next it accept cookies and load ajax to have full list of meetings. Then it save
 
 3. output:
 
-- whole data: 'raw_data.csv'
-- matches data: 'raw_data_matches.csv'
-- players data: 'raw_data_players.csv'
+    1. whole data: 'raw_data.csv'
+    2. matches data: 'raw_data_matches.csv'
+    3. players data: 'raw_data_players.csv'
 
 
 ### 2. prepare the data
@@ -39,40 +39,36 @@ The script:
 5. makes dummmy variables
 6. scales variables
 7. Output:
+
     1. players_data_clean.csv
     2. match_data_clean.csv (there are made points 1-2 only)
     3. train_data_clean.csv
 
-### EDA and classic classification methods (main)
+### 3. Modeling
 
-- Introduction - what do we want to achieve?
-- Exploratory Data Analysis
-  - Variation
-    - Outliers
-    - Only 0 observations
-  - Covariation
-- Modelling
-  - Models - filter model selection - SelectKBest
-  - Models - RFCV model selection
-  - Model results
-  - Hyperparameters tuning for top model.
-- Best model Interpretation
-  - Performance
-  - Metrics
-  - Validation curves
-  - Independent variables p-value check
-  - Feature importance
-- Summary
+The aim of the script is to find the best classification method
 
-### Neural network (main_nn)
+The script:
 
-- Introduction
-- Modelling 
-  - Hyperparameters tunning
-- Interpretation
-- Summary
-- Scikit learn w Keras
+1. train models with k best feature selection
+2. train models with rfecv 
+3. search for best hyperparameters for best 3 models
+4. Output:
+    1. final_model.csv
 
+### 4. Model interpretation
+
+The aim of the script is to interpret classification model - its performance and feature importances
+
+The script:
+
+1. read best models 
+2. calculates performance metrics
+4. calculates feature importances
+3. visualize roc and precision-recall curve
+4. Output:
+    1. final_model_metrics.csv
+    2. feat_imp_[model_name].csv
 
 ## Interesting features
 
